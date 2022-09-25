@@ -45,7 +45,7 @@ class Bartender(MenuDelegate):
 		self.btn2Pin = RIGHT_BTN_PIN
 	 
 	 	# configure interrups for buttons
-	 	GPIO.setup(self.btn1Pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+		GPIO.setup(self.btn1Pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 		GPIO.setup(self.btn2Pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)  
 
 		# configure screen
@@ -84,7 +84,7 @@ class Bartender(MenuDelegate):
 			self.strip.setPixelColor(i, 0)
 		self.strip.show() 
 
-		print "Done initializing"
+		print("Done initializing")
 
 	@staticmethod
 	def readPumpConfiguration():
@@ -225,7 +225,7 @@ class Bartender(MenuDelegate):
 		self.running = False
 
 	def displayMenuItem(self, menuItem):
-		print menuItem.name
+		print(menuItem.name)
 		self.led.clear_display()
 		self.led.draw_text2(0,20,menuItem.name,2)
 		self.led.display()
